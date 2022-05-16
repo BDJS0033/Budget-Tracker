@@ -44,4 +44,36 @@ function uploadTransaction() {
     const budgetObjectStore = transaction.budgetObjectStore('new_transaction');
     //get all records from store and set to a variable number
     const getAll = budgetObjectStore.getAll();
+
+    //execute .getAll()
+    getAll.onsuccess = function() {
+        //if there was data in IndexedDB's store, lets send it to API Server
+        if (getAll.result.length > 0) {
+            fetch('/api/transaction/bulk', {
+                method: 'POST',
+                body: JSON.stringify(getAll.result),
+                headers: {
+                    Accept: 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(serverResponse => {
+                if (serverResponse.message) {
+                    throw new Error(serverResponse);
+                }
+                //To open one more transaction
+                const transaction = db.transaction(['new_transaction',], 'readwrite');
+                //To access the new_transaction object store
+                const budgetObjectStore = transaction.budgetObjectStore('new_transaction');
+                //To clear all items in your store
+                budgetObjectStore.clear();
+            })
+            .catch(err => {
+                //Set reference to redirect back here
+                console.log(err);
+            });
+
+        }
+    };
 }
