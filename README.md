@@ -48,16 +48,17 @@ npm i compression
 <br />
 
 ## Application Output
-![19-pwa-homework-demo-01](https://user-images.githubusercontent.com/82056351/168348532-40247fc2-dfd3-4034-a8a2-829f986f863a.png)
+![Screenshot of Deployed Application](https://user-images.githubusercontent.com/82056351/168670716-d2c91071-ad47-4de7-9dcb-8be2bea8cc46.jpg)
+
 
 <br />
 
 ## Deployment
-[Heroku]()
+[Link to Deployed Application in Heroku](https://polar-atoll-78326.herokuapp.com/)
 
 ## GitHub
 
-[GitHub](https://github.com/BDJS0033/Budget-Tracker)
+[GitHub Repository](https://github.com/BDJS0033/Budget-Tracker)
 
 <br />
 
