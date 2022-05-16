@@ -59,7 +59,6 @@ npm i compression
 ## GitHub
 
 [GitHub Repository](https://github.com/BDJS0033/Budget-Tracker)
-
 <br />
 
 ## Licence
